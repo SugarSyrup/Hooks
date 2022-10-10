@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-const useTabs = (initialTab, allTabs) => {
+const useTabs = (initialTab, allTabs) => {    
+    const [currentIndex, setCurrentIndex] = useState(initialTab);
+
     if(!allTabs || !Array.isArray(allTabs)){
         return;
     }
-    const [currentIndex, setCurrentIndex] = useState(initialTab);
+
     return {
         currentItem : allTabs[currentIndex],
         changeItem: setCurrentIndex,
